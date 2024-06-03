@@ -18,6 +18,9 @@ This website is a tool to execute code in Python in the browser. It is useful fo
 
 ## Screenshots
 
+![Successful run](/etc/success.png)
+![Failed run](/etc/failure.png)
+
 ## Technologies
 
 ### Frontend
@@ -82,6 +85,7 @@ This website is a tool to execute code in Python in the browser. It is useful fo
    ```
 
    Note that sometimes certain tests may fail due to the time taken to create and destroy Docker containers. This is a known issue and is mentioned in the notes section. You will usually see a 409 error for this case.
+   To mitigate this error, I have added buffer times in the tests, but sometimes the tests may still fail.
 
 ## API endpoints
 
@@ -128,6 +132,10 @@ It is almost exactly the same as the `/execute` endpoint, but it also saves the 
 - **Add support for sharing code snippets:** Using `submission_id` would likely suffice, but probably better to use UUIDs and temporarily store snippets.
 - Responsive design
 - Dark mode
+
+## Acknowledgements
+
+I borrowed the frontend design from the freeCodeCamp tutorial for a React-based code editor found [here](https://www.freecodecamp.org/news/how-to-build-react-based-code-editor/). However, since it was in JavaScript, I had to make several changes to convert the code to TypeScript.
 
 ## License
 
