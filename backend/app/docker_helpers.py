@@ -27,7 +27,7 @@ def build_image_if_not_exists(client, image_name: str, path: str="../"):
         logging.info(f"Image '{image_name}' already exists. Skipping build.")
     except docker.errors.ImageNotFound:
         logging.info(f"Building image '{image_name}'...")
-        client.images.build(path=path, tag=image_name, rm=True)
+        client.images.build(path=path, dockerfile="Dockerfile.executor", tag=image_name, rm=True)
         logging.info("Image built")
 
 def clean_existing_container(client, container_name: str):
@@ -132,7 +132,7 @@ def setup_docker_environment():
     container_name = "test_container"
     
     logging.info("Initialized client")
-    build_image_if_not_exists(client, image_name)
+    build_image_if_not_exists(client, image_name, path="../code_executor")
     clean_existing_container(client, container_name)
     
     return client, image_name, container_name

@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - "8000:8000"
+    environment:
+      - DOCKER_HOST=unix:///var/run/docker.sock
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+
+networks:
+  default:
+    driver: bridge
