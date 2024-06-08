@@ -126,7 +126,7 @@ It is almost exactly the same as the `/execute` endpoint, but it also saves the 
 ## Future improvements
 
 - Dockerize the frontend and backend and use Docker compose for easier deployments.
-- Use GitHub Actions to setup testing.
+- Use **GitHub Actions** to setup automated building and testing.
 - **Add support for more libraries:** This is easy to do by installing the required libraries in the Docker image.
 - **Add support for more programming languages:** This can be done by creating more Docker images for different languages.
 - **Add support for sharing code snippets:** Using `submission_id` would likely suffice, but probably better to use UUIDs and temporarily store snippets.
